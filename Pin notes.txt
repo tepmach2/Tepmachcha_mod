@@ -1,0 +1,45 @@
+Extending Tepmachcha --- Pin connections and modifications
+Leo 7 Apr 2017
+
+FONA 808 				|		Seeeduino v3		|			Other			|	Notes
+---------------------------------------------------------------------------------------------------------------
+
+RST 	(5)				->		(3)												:	Moved from (seeeduino 4) in previous version, but this conflicted with SD
+RX 		(6)				->		(6)
+TX 		(7)				->		(9)
+
+KEY		(9)				->		(A2)											: 	Moved from (seeeduino 11) in previous version, but this conflicted with SD
+PSTAT	(11)			->		(A3)											:	Moved from (seeeduino 12) in previous version, but this conflicted with SD
+RTS 	(8)				->		(A1)											: 	NEW! Hardware control for ready-to-send to avoid buffer overflow on firmware download
+
+VIO 	(4)				->		(IOREF)											: 	Moved from VCC NET
+
+GND		(3)											-> 	(GND NET)
+BAT		(2)											->	(VCC NET)
+
+---------------------------------------------------------------------------------------------------------------
+
+								(7)					->	Sonar Ping  (conn 1)
+								(8)					-> 	Sonar Range (conn 2)
+
+---------------------------------------------------------------------------------------------------------------
+
+FREE AND USEFUL PINS	
+
+	seeeduino A0			--		Additional analog input from sensors
+	seeeduino 4				--		Can be jumped to SD power-on, or as additional GPIO
+
+	seeeduino a4/a5			--		I2C bus / additional sensors
+
+	seeeduino UART Tx Rx 	--		May be used for XBee/BT4 comms, or as additional GPIO
+
+	seeeduino SPI			--		ICSP / additional sensors/peripherals
+
+NOTES
+
+	The sensor connector (2.54mm x4) will be broken out as in the previous board.
+	Intention is to mount the FONA 808 on the board with a female header, so it is replaceable this time.
+	A 2x3 pin standard ICSP header will be broken out on the board too.
+	Free and useful pins as mentioned above will be labelled but not specifically broken out. Further work on this design might break them out, or create another board on top which does so.
+
+
