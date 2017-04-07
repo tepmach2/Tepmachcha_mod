@@ -29,15 +29,16 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:tep_mod-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Tepmachcha"
-Date "2016-05-17"
+Title "Extending Tepmachcha "
+Date "2017-04-07"
 Rev "0.1"
-Comp "DAI Maker Lab"
+Comp "Theorent / STEM Phnom Penh"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -54,19 +55,6 @@ F 3 "" H 3550 3750 60  0000 C CNN
 	1    3550 3750
 	1    0    0    -1  
 $EndComp
-$Comp
-L ARDUINO_SHIELD SHIELD?
-U 1 1 58E70BCA
-P 6650 3850
-F 0 "SHIELD?" H 6200 5000 60  0000 C CNN
-F 1 "ARDUINO_SHIELD" H 6700 2900 60  0000 C CNN
-F 2 "freetronics_footprints:ARDUINO_SHIELD" H 6650 3650 50  0001 C CNN
-F 3 "" H 6650 3850 60  0000 C CNN
-	1    6650 3850
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	4350 3450 5700 3450
 Wire Wire Line
 	4350 3550 5000 3550
 Wire Wire Line
@@ -79,18 +67,6 @@ Wire Wire Line
 	4900 3650 4900 4050
 Wire Wire Line
 	4900 4050 5700 4050
-Wire Wire Line
-	4350 3850 4800 3850
-Wire Wire Line
-	4800 3850 4800 4250
-Wire Wire Line
-	4800 4250 5700 4250
-Wire Wire Line
-	4350 4050 4700 4050
-Wire Wire Line
-	4700 4050 4700 4350
-Wire Wire Line
-	4700 4350 5700 4350
 Text Label 7600 3950 0    39   ~ 0
 GND
 Text Label 7600 4050 0    39   ~ 0
@@ -157,10 +133,7 @@ Text Label 4350 3150 0    39   ~ 0
 Vcc
 Text Label 4350 3250 0    39   ~ 0
 GND
-Text Label 4350 3350 0    39   ~ 0
-Vcc
 NoConn ~ 4350 3050
-NoConn ~ 4350 3750
 NoConn ~ 4350 3950
 NoConn ~ 4350 4150
 NoConn ~ 4350 4250
@@ -194,7 +167,6 @@ GND
 NoConn ~ 5700 3050
 NoConn ~ 5700 3150
 NoConn ~ 5700 3250
-NoConn ~ 5700 3350
 NoConn ~ 5700 3550
 NoConn ~ 5700 4150
 NoConn ~ 5700 4450
@@ -209,15 +181,75 @@ NoConn ~ 6750 5150
 NoConn ~ 6750 5250
 NoConn ~ 6750 5350
 NoConn ~ 7600 4450
-NoConn ~ 7600 4350
 NoConn ~ 7600 4250
 NoConn ~ 7600 4150
 NoConn ~ 7600 3850
 NoConn ~ 7600 3750
 NoConn ~ 7600 3550
-NoConn ~ 7600 3450
-NoConn ~ 7600 3350
-NoConn ~ 7600 3250
 NoConn ~ 7600 3150
 NoConn ~ 7600 3050
+$Comp
+L ARDUINO_SHIELD SHIELD?
+U 1 1 58E70BCA
+P 6650 3850
+F 0 "SHIELD?" H 6200 5000 60  0000 C CNN
+F 1 "ARDUINO_SHIELD" H 6700 2900 60  0000 C CNN
+F 2 "freetronics_footprints:ARDUINO_SHIELD" H 6650 3650 50  0001 C CNN
+F 3 "" H 6650 3850 60  0000 C CNN
+	1    6650 3850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4350 3450 5300 3450
+Wire Wire Line
+	5300 3450 5300 3350
+Wire Wire Line
+	5300 3350 5700 3350
+NoConn ~ 5700 3450
+Wire Wire Line
+	4350 3850 4700 3850
+Wire Wire Line
+	4700 3850 4700 2650
+Wire Wire Line
+	4700 2650 7750 2650
+Wire Wire Line
+	7750 2650 7750 3350
+Wire Wire Line
+	7750 3350 7600 3350
+Wire Wire Line
+	4350 4050 4600 4050
+Wire Wire Line
+	4600 4050 4600 2600
+Wire Wire Line
+	4600 2600 7700 2600
+Wire Wire Line
+	7700 2600 7700 3250
+Wire Wire Line
+	7700 3250 7600 3250
+NoConn ~ 5700 4250
+NoConn ~ 5700 4350
+Wire Wire Line
+	4350 3750 4550 3750
+Wire Wire Line
+	4550 3750 4550 2550
+Wire Wire Line
+	4550 2550 7800 2550
+Wire Wire Line
+	7800 2550 7800 3450
+Wire Wire Line
+	7800 3450 7600 3450
+Wire Wire Line
+	4350 3350 4500 3350
+Wire Wire Line
+	4500 3350 4500 5050
+Wire Wire Line
+	4500 5050 7750 5050
+Wire Wire Line
+	7750 5050 7750 4350
+Wire Wire Line
+	7750 4350 7600 4350
+Text Notes 7900 3150 0    60   ~ 0
+ADC4/5 are I2C bus - leave open
+Text Notes 7900 3600 0    60   ~ 0
+ADC0 is free GPIO - leave open\n
 $EndSCHEMATC
