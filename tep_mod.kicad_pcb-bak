@@ -95,7 +95,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory /Users/leo/Desktop/poo/))
+      (outputdirectory "/Users/leo/Documents/STEMPP repos/Tepmachcha_mod/Production/"))
   )
 
   (net 0 "")
